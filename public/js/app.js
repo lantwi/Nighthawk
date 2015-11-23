@@ -18,8 +18,8 @@
 
     $('#les').click(e=>{
       e.preventDefault();
-
-      $.get('/bars/searchByName',{name:$('#les').val()} , renderMany);
+      console.log('hello is our click event working?');
+      $.get('/lower_east_side',{name:$('#les').val()} , renderMany);
       $('#les').val('')
 
         });
