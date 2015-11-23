@@ -16,11 +16,11 @@
     };
 
 
-    $('#search-button').click(e=>{
+    $('#les').click(e=>{
       e.preventDefault();
 
-      $.get('/bars/searchByName',{name:$('#search-field').val()} , renderOne);
-      $('#search-name-field').val('')
+      $.get('/bars/searchByName',{name:$('#les').val()} , renderMany);
+      $('#les').val('')
 
         });
 
