@@ -20,7 +20,7 @@ var yelp = new Yelp({
   app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
-  yelp.search({ term: 'food', location: 'Manhattan' })
+  yelp.search({ term: '', location: 'Manhattan' })
     .then(function (data) {
     console.log(data);
     res.send(data)
