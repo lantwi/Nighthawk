@@ -9,12 +9,12 @@ var express = require('express'),
     http = require('http').Server(app),
     passport = require('passport'),
     flash = require('connect-flash'),
+    passportRequire = require('./config/passport.js')(passport), //pass passport for ocnfiguration
     cookieParser = require('cookie-parser'),
     configDB = require('./config/database.js');
 
-mongoose.connect(configDB.url); //connect to our database
+// mongoose.connect(configDB.url); //connect to our database
 
-// require('./config/passport')(passport); //pass passport for ocnfiguration
 
 app.use(morgan('dev'));
 app.use(cookieParser());
