@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lantwi/Nighthawk#readme",
   "dependencies": {
+    "bcrypt": "^0.8.5",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.14.1",
     "connect-flash": "^0.1.1",
