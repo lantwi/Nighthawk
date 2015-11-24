@@ -1,12 +1,40 @@
 var express = require('express'),
-   logger = require('morgan'),
-   session = require('express-session'),
-   bodyParser = require('body-parser'),
-   mongoose = require('mongoose'),
-   app = express(),
-   Yelp = require('yelp'),
-   request = require('request'),
-   http = require('http').Server(app);
+    morgan = require('morgan'),
+    session = require('express-session'),
+    bodyParser = require('body-parser'),
+    mongoose = require('mongoose'),
+    app = express(),
+    Yelp = require('yelp'),
+    request = require('request'),
+    http = require('http').Server(app),
+    passport = require('passport'),
+    flash = require('connect-flash'),
+    cookieParser = require('cookie-parser'),
+    configDB = require('./config/database.js');
+
+mongoose.connect(configDB.url); //connect to our database
+
+// require('./config/passport')(passport); //pass passport for ocnfiguration
+
+app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(bodyParser());
+
+app.set('view engine', 'ejs'); //ejs for templating
+
+app.use(session({ secret: 'hellohello'}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash()); //use connect-flash for flash messages stored in session
+
+//routes ======================================================
+require('./app/routes.js')(app, passport);//load our routes and pass in our app and fully configured passport
+
+   //Set up the port to listen
+ app.listen(3000, function () {
+ console.log('App listening on port 3000...');
+   });
+
 
 var yelp = new Yelp({
  consumer_key: '8cszeFT7_E4zMENoUzmkuQ',
@@ -14,8 +42,6 @@ var yelp = new Yelp({
  token: 'nnX71q_vcXn3jU8X0O1lMWNFBosUf0TD',
  token_secret: 'BC31sF5RDHI54eORY7PBf0-wVS4',
 });
-
-  app.use(logger('dev'));
 
   app.use(express.static(__dirname + '/public'));
 
@@ -228,11 +254,6 @@ app.get('/washington_heights', function(req, res){
     console.error(err);
   });
 });
-
-   //Set up the port to listen
- app.listen(3000, function () {
- console.log('App listening on port 3000...');
-   });
 
 
 
