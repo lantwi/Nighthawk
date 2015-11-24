@@ -67,7 +67,7 @@ app.get('/soho', function(req, res){
 app.get('/lower_east_side', function(req, res){
   yelp.search({ term: 'bars', location: 'lower east side', limit: 10, sort: 2  })
     .then(function (data) {
-    console.log(data);
+    // console.log(data);
     res.send(data)
   })
   .catch(function (err) {

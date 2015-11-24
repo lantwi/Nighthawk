@@ -48,16 +48,16 @@
   </div>
 
 
-
+      <div id="results-container"></div>
 
       <div id="bars-container">
 
             <template id="bars-template" type="text/x-handlebars-template">
-             <div class="bars-info" data-id="{{_id}}">
-                 <h1>{{name}}</h1>
+             <div class="bars-info" data-id="{{id}}">
                  <img src="{{img_url}}">
-                 <h3>Rating: {{rating_img_url}}</h3>
-                 <h3>Neighborhood: {{location.neighborhoods}}</h3>
+                 {{#each businesses}}
+                 <div>{{name}}</div>
+                       {{/each}}
                  <link rel="" href="{{url}}">
               </div>
              </template>
