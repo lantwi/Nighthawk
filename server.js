@@ -75,7 +75,7 @@ app.get('/lower_east_side', function(req, res){
   });
 });
 
-app.get('/greenwich_village ', function(req, res){
+app.get('/greenwich_village', function(req, res){
   yelp.search({ term: 'bars', location: 'Greenwich Village', limit: 10, sort: 2  })
     .then(function (data) {
     console.log(data);
@@ -129,7 +129,7 @@ app.get('/chelsea', function(req, res){
   });
 });
 
-app.get('/midtown_west ', function(req, res){
+app.get('/midtown_west', function(req, res){
   yelp.search({ term: 'bars', location: 'Midtown West', limit: 10, sort: 2  })
     .then(function (data) {
     console.log(data);
@@ -234,6 +234,13 @@ app.get('/washington_heights', function(req, res){
  console.log('App listening on port 3000...');
    });
 
+ mongoose.connect('mongodb://localhost/Nighthawkapp', function (err) {
+     if (err) {
+        console.log(err);
+     } else {
+       console.log('connection successful');
+     }
+  });
 
 
 
