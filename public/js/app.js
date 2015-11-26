@@ -10,12 +10,15 @@
     //   this.html('').show().append(html);
     // }
 
+    var renderTemplate_showComments  = Handlebars.compile($("template#new-post-template").html());
+    console.log($("template#new-post-template").html());
 
     $('#les').click(e=>{
       e.preventDefault();
       console.log('hello is our click event working?');
       $.get('/lower_east_side', renderBars, 'json')
     });
+
 
     $('#soho').click(e=>{
       e.preventDefault();
@@ -33,6 +36,7 @@
       e.preventDefault();
       console.log('hello is our click event working?');
       $.get('/greenwich_village', renderBars, 'json')
+
     });
 
     $('#east-village').click(e=>{
@@ -95,6 +99,9 @@
       $.get('/washington_heights', renderBars, 'json')
     });
 
+    $('#bar-button').click(function(){
+      console.log($(this).data('id'));
+    });
 
     var renderBars = function (data) {
       var $container = $('#results-container');
@@ -102,6 +109,14 @@
       $(".bar").show()
       var html = renderTemplate_showBars(data);
       $container.html('').append(html);
-
     };
+
+    var renderCommentsPage = function (data) {
+      var $post = $('#results-container');
+      $post.empty();
+      $(".new-post").show()
+      var posted = renderTemplate_showComments(data);
+      $post.posted('') = renderTemplate_showComments;
+    };
+
   });

@@ -35,7 +35,7 @@
                   <li id="wash-heights"><a href="">Washington Heights</a></li>
                 </ul>
               </li>
-          <li><a href="">Home</a></li>
+          <li id="comments-link"><a href="">Comments</a></li>
 
           <li><a href="">Log-In</a></li>
 
@@ -51,11 +51,15 @@
         <div id="vertical"></div>
       </div>
 
+      <div id="comments-container">
+        <div id="vertical"></div>
+      </div>
+
             <template id="bars-template" type="text/x-handlebars-template">
                  {{#each businesses}}
              <div class="bars-info" data-id="{{_id}}">
                 <div class="bar">
-                 <h1>{{name}}</h1>
+                 <h1 id="bar-name">{{name}}</h1>
                  <img src="{{image_url}}">
                   <br>
                  <img src="{{rating_img_url}}">
@@ -63,6 +67,22 @@
               </div>
                  {{/each}}
              </template>
+
+
+        <template id="new-post-template" type="text/x-handlebars-template">
+          <div id="bar-comment-scroll">
+              <div>
+                 <h2>New Post</h2>
+                    <section id="new-post">
+                      <textarea name="" id="new-post-content" cols="10" rows="10"></textarea><br>
+                        <button id="new-post-button">Create Post</button>
+                        <button id="edit-post-button">Edit Post</button>
+                        <button id="delete-post-button">Delete Post</button>
+                    </section>
+            </div>
+          </div>
+        </template>
+
 
   </body>
 </html>

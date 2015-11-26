@@ -234,13 +234,13 @@ app.get('/washington_heights', function(req, res){
  console.log('App listening on port 3000...');
    });
 
- mongoose.connect('mongodb://localhost/Nighthawkapp', function (err) {
+ /*mongoose.connect('mongodb://localhost/Nighthawkapp', function (err) {
      if (err) {
         console.log(err);
      } else {
        console.log('connection successful');
      }
-  });
+  });*/
 
 
 
