@@ -1,12 +1,47 @@
 var express = require('express'),
-   logger = require('morgan'),
-   session = require('express-session'),
-   bodyParser = require('body-parser'),
-   mongoose = require('mongoose'),
-   app = express(),
-   Yelp = require('yelp'),
-   request = require('request'),
-   http = require('http').Server(app);
+    morgan = require('morgan'),
+    session = require('express-session'),
+    bodyParser = require('body-parser'),
+    mongoose = require('mongoose'),
+    app = express(),
+    Yelp = require('yelp'),
+    request = require('request'),
+    http = require('http').Server(app),
+    passport = require('passport'),
+    flash = require('connect-flash'),
+    passportRequire = require('./config/passport.js')(passport), //pass passport for ocnfiguration
+    cookieParser = require('cookie-parser'),
+    configDB = require('./config/database.js');
+
+// mongoose.connect(configDB.url); //connect to our database
+
+mongoose.connect('mongodb://localhost/Nighthawkapp', function (err) {
+     if (err) {
+       console.log(err);
+     } else {
+       console.log('connection successful');
+     }
+   });
+
+app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(bodyParser());
+
+app.set('view engine', 'ejs'); //ejs for templating
+
+app.use(session({ secret: 'hellohello'}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash()); //use connect-flash for flash messages stored in session
+
+//routes ======================================================
+require('./app/routes.js')(app, passport);//load our routes and pass in our app and fully configured passport
+
+   //Set up the port to listen
+ app.listen(3000, function () {
+ console.log('App listening on port 3000...');
+   });
+
 
 var yelp = new Yelp({
  consumer_key: '8cszeFT7_E4zMENoUzmkuQ',
@@ -15,11 +50,9 @@ var yelp = new Yelp({
  token_secret: 'BC31sF5RDHI54eORY7PBf0-wVS4',
 });
 
-  app.use(logger('dev'));
-
   app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(req, res){
+app.get('/all', function(req, res){
   yelp.search({ term: 'food', location: 'Manhattan' })
     .then(function (data) {
     console.log(data);
@@ -229,6 +262,7 @@ app.get('/washington_heights', function(req, res){
   });
 });
 
+<<<<<<< HEAD
    //Set up the port to listen
  app.listen(3000, function () {
  console.log('App listening on port 3000...');
@@ -241,6 +275,8 @@ app.get('/washington_heights', function(req, res){
        console.log('connection successful');
      }
   });*/
+=======
+>>>>>>> fcf3ed1d2c7c2a5d7eb93996eb08f6c2e8839b55
 
 
 
