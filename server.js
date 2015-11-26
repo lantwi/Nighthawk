@@ -262,11 +262,6 @@ app.get('/washington_heights', function(req, res){
   });
 });
 
-<<<<<<< HEAD
-   //Set up the port to listen
- app.listen(3000, function () {
- console.log('App listening on port 3000...');
-   });
 
  /*mongoose.connect('mongodb://localhost/Nighthawkapp', function (err) {
      if (err) {
@@ -275,8 +270,7 @@ app.get('/washington_heights', function(req, res){
        console.log('connection successful');
      }
   });*/
-=======
->>>>>>> fcf3ed1d2c7c2a5d7eb93996eb08f6c2e8839b55
+
 
 
 
