@@ -10,8 +10,8 @@
     //   this.html('').show().append(html);
     // }
 
-    var renderTemplate_showComments  = Handlebars.compile($("template#new-post-template").html());
-    console.log($("template#new-post-template").html());
+    /*var renderTemplate_showComments  = Handlebars.compile($("template#new-post-template").html());
+    console.log($("template#new-post-template").html());*/
 
     $('#les').click(e=>{
       e.preventDefault();
@@ -111,12 +111,12 @@
       $container.html('').append(html);
     };
 
-    var renderCommentsPage = function (data) {
+  /*  var renderCommentsPage = function (data) {
       var $post = $('#results-container');
       $post.empty();
       $(".new-post").show()
       var posted = renderTemplate_showComments(data);
       $post.posted('') = renderTemplate_showComments;
-    };
+    };*/
 
   });
