@@ -4,6 +4,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var User = require('../app/models/user');
 
 module.exports = function (passport) {
+
   passport.serializeUser(function(user, done){
     done(null, user.id);
   });
@@ -12,22 +13,22 @@ module.exports = function (passport) {
     User.findById(id, function (err, user) {
       done(err, user);
     });
+
   });
 
   passport.use('local-signup', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
-    passReToCallback : true
+    passReqToCallback : true
   },
 
 
     function (req, email, password, done) {
-      process.nextTick(function(){
 
       User.findOne({'local.email' : email}, function(err, user){
 
         if (err)
-        return done (err);
+          return done (err);
 
         if (user){
           return done(null, false, req.flash('signupMessage', 'Email is invalid and already taken.'));
@@ -48,9 +49,8 @@ module.exports = function (passport) {
 
       });
 
-      });
-
     }));
+
 passport.use('local-login', new LocalStrategy({
       // by default, local strategy uses username and password, we will override with email
       usernameField : 'email',
