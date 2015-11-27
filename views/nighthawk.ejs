@@ -10,9 +10,7 @@
      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
      <link rel="stylesheet" type="text/css" href="css/style.css">
-     <style>
-         body        { padding-top:80px; word-wrap:break-word; }
-     </style>
+
   </head>
   <body>
 <!--  BEGINNING: where the box with the profile and user info is rendered. This is the styling for it -->
@@ -54,7 +52,7 @@
           <li><a href="">Neighborhoods <span class="arrow">&#9660;</span></a>
                 <ul class="sub-menu">
                   <li id="les"><a href="">Lower East Side</a></li>
-                  <li><a href="">SoHo</a></li>
+                  <li><a href="soho">SoHo</a></li>
                   <li><a href="">China Town</a></li>
                   <li><a href="">Greenwich Village</a></li>
                   <li><a href="">East Village</a></li>
@@ -85,15 +83,18 @@
 
       <div id="bars-container">
 
-            <template id="bars-template" type="text/x-handlebars-template">
-             <div class="bars-info" data-id="{{id}}">
-                 <img src="{{img_url}}">
-                 {{#each businesses}}
-                 <div>{{name}}</div>
-                       {{/each}}
-                 <link rel="" href="{{url}}">
-              </div>
-             </template>
+        <template id="bars-template" type="text/x-handlebars-template">
+             {{#each businesses}}
+         <div class="bars-info" data-id="{{_id}}">
+            <div class="bar">
+             <h1 id="bar-name">{{name}}</h1>
+             <img src="{{image_url}}">
+              <br>
+             <img src="{{rating_img_url}}">
+            </div>
+          </div>
+             {{/each}}
+         </template>
 
       </div>
 
