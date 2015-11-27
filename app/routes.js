@@ -13,7 +13,7 @@ module.exports = function (app, passport) {
  // show the login form
 
   app.get('/login', function (req, res) {
-    res.render('login.ejs', { message: req.flash('loginMessage')})
+    res.render('login.ejs', { message: req.flash('loginMessage') });
   });
 
   app.post('/login', passport.authenticate('local-login', {
@@ -30,12 +30,12 @@ module.exports = function (app, passport) {
 // =====================================
 
   app.get('/signup', function (req, res) {
-    res.render('signup.ejs', { message: req.flash('signupMessage')})
+    res.render('signup.ejs', { message: req.flash('signupMessage') })
 
 })  ;
 
   app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect : '/profile',
+    successRedirect : '/login',
     failureRedirect : '/signup',
     failureFlash    : true
   }));
@@ -47,7 +47,7 @@ module.exports = function (app, passport) {
  // we will use route middleware to verify this (the isLoggedIn function)
 
   app.get('/profile', isLoggedIn, function (req, res) {
-    res.render('profile.ejs', {
+    res.render('nighthawk.ejs', {
       user : req.user //get the user out of session and pass to template
     });
   });
