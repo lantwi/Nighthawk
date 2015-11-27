@@ -105,9 +105,9 @@
 #results-container {
   padding:20px 20px;
   position: fixed;
-  height: 75%;
+  height: 85%;
   width: 35%;
-  /*margin-left: 200px;*/
+  margin-left: 200px;
   overflow-x: none;
   overflow-y: scroll;
   z-index: 1;

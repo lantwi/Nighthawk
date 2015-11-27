@@ -99,10 +99,6 @@
       $.get('/washington_heights', renderBars, 'json')
     });
 
-    $('#bar-button').click(function(){
-      console.log($(this).data('id'));
-    });
-
     var renderBars = function (data) {
       var $container = $('#results-container');
       $container.empty();

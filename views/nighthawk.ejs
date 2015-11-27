@@ -13,34 +13,6 @@
 
   </head>
   <body>
-<!--  BEGINNING: where the box with the profile and user info is rendered. This is the styling for it -->
-    <div class="container">
-
-        <div class="page-header text-center">
-            <h1><span class="fa"></span> Welcome </h1>
-            <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-        </div>
-
-        <div class="row">
-
-            <!-- LOCAL INFORMATION -->
-            <div class="col-sm-6">
-                <div class="well">
-                    <h3><span class="fa fa-user"></span></h3>
-
-                        <p>
-                            <strong>id</strong>: <%= user._id %><br>
-                            <strong>email</strong>: <%= user.local.email %><br>
-                            <strong>password</strong>: <%= user.local.password %>
-                        </p>
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    <!-- ENDING: here is where that image renders with the profile information -->
 
   <div id="header">
     <div class="head_container">
@@ -52,26 +24,24 @@
           <li><a href="">Neighborhoods <span class="arrow">&#9660;</span></a>
                 <ul class="sub-menu">
                   <li id="les"><a href="">Lower East Side</a></li>
-                  <li><a href="soho">SoHo</a></li>
-                  <li><a href="">China Town</a></li>
-                  <li><a href="">Greenwich Village</a></li>
-                  <li><a href="">East Village</a></li>
-                  <li><a href="">Tribeca</a></li>
-                  <li><a href="">Gramercy Park</a></li>
-                  <li><a href="">Chelsea</a></li>
-                  <li><a href="">Midtown West</a></li>
-                  <li><a href="">Midtown East</a></li>
-                  <li><a href="">Upper West Side</a></li>
-                  <li><a href="">Upper East Side</a></li>
-                  <li><a href="">Harlem</a></li>
-                  <li><a href="">Washington Heights</a></li>
+                  <li id="soho"><a href="">SoHo</a></li>
+                  <li id="china-town"><a href="">China Town</a></li>
+                  <li id="greenwich"><a href="">Greenwich Village</a></li>
+                  <li id="east-village"><a href="">East Village</a></li>
+                  <li id="tribeca"><a href="">Tribeca</a></li>
+                  <li id="gramercy"><a href="">Gramercy Park</a></li>
+                  <li id="chelsea"><a href="">Chelsea</a></li>
+                  <li id="midtown-west"><a href="">Midtown West</a></li>
+                  <li id="midtown-east"><a href="">Midtown East</a></li>
+                  <li id="uws"><a href="">Upper West Side</a></li>
+                  <li id="ues"><a href="">Upper East Side</a></li>
+                  <li id="harlem"><a href="">Harlem</a></li>
+                  <li id="wash-heights"><a href="">Washington Heights</a></li>
                 </ul>
               </li>
           <li><a href="">Home</a></li>
 
-          <li><a href="">Log-In</a></li>
-
-          <li><a href="">Sign Out</a></li>
+          <li><a href="/logout">Sign Out</a></li>
         </ul>
 
       </nav>
@@ -79,7 +49,22 @@
   </div>
 
 
-      <div id="results-container"></div>
+      <div class="row">
+          <!-- LOCAL INFORMATION -->
+          <div class="col-sm-6">
+              <div class="well">
+                  <h6><span class="fa fa-user"></span></h6>
+                      <p>
+                          <strong>id</strong>: <%= user._id %><br>
+                          <strong>email</strong>: <%= user.local.email %><br>
+                      </p>
+              </div>
+          </div>
+      </div>
+
+      <div id="results-container">
+        <div id="vertical"></div>
+      </div>
 
       <div id="bars-container">
 
