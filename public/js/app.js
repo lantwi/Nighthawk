@@ -102,7 +102,7 @@
     var renderBars = function (data) {
       var $container = $('#results-container');
       $container.empty();
-      $(".bar").show()
+      $("#bar").show()
       var html = renderTemplate_showBars(data);
       $container.html('').append(html);
     };
