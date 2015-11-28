@@ -1,4 +1,4 @@
-*{
+ body{
     font-family: 'Warnes', cursive;
 }
 .nav {
@@ -133,13 +133,12 @@
   z-index: 1;
 }
 
-
-
 #vertical {
   width: 75%;
  height: 200%;
  z-index: 2;
 }
+
 #bar {
   text-align: center;
   border: 3px solid black;
@@ -152,6 +151,10 @@
   font-family: 'Warnes', cursive;
 }
 
+#bar-name {
+  font-family: 'Warnes', cursive;
+}
+
 .bar-comment-scroll {
   text-align: center;
   border: 3px solid black;
@@ -160,4 +163,40 @@
   background-color: white;
   margin: 10px;
   font-family: 'Warnes', cursive;
+}
+
+.jumbotron {
+  margin-top: 100px;
+  color: #C73E1D;
+  background-color: #EDD6B2;
+  font-family: 'Warnes', cursive;
+}
+
+.jumbotron h1 {
+  font-family: 'Warnes', cursive;
+}
+
+.jumbotron h3 {
+  font-family: 'Warnes', cursive;
+}
+
+.jumbotron a.btn {
+  background-color:#A2D3C2;
+}
+
+.btn {
+  color: #C73E1D;
+  background-color: #EDD6B2;
+}
+
+.container h1 {
+  font-family: 'Warnes', cursive;
+}
+
+.container a {
+  color: #C73E1D;
+}
+
+.fa-sign-in {
+  color: #C73E1D;
 }
