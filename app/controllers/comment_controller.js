@@ -1,12 +1,12 @@
 var mongoose = require('mongoose'),
-  Artist = require('../app/models/comment.js');
+  Comment = require('../app/models/comment.js');
 
 module.exports.controller = function(app) {
   // INDEX
   app.get("/comments", function(req, res) {
     Comment.find().exec(function(err, comments) {
       if (err) return next(err);
-      res.send(comments);
+      res.send('hi');
     });
   });
 

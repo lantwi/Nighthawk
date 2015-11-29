@@ -11,7 +11,8 @@ var express = require('express'),
     flash = require('connect-flash'),
     passportRequire = require('./config/passport.js')(passport), //pass passport for ocnfiguration
     cookieParser = require('cookie-parser'),
-    configDB = require('./config/database.js');
+    configDB = require('./config/database.js'),
+    Comment = require('./app/models/comment.js');;
 
 // mongoose.connect(configDB.url); //connect to our database
 
@@ -22,6 +23,7 @@ mongoose.connect('mongodb://localhost/Nighthawkapp', function (err) {
        console.log('connection successful');
      }
    });
+
 
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -37,10 +39,6 @@ app.use(flash()); //use connect-flash for flash messages stored in session
 //routes ======================================================
 require('./app/routes.js')(app, passport);//load our routes and pass in our app and fully configured passport
 
-   //Set up the port to listen
- app.listen(3000, function () {
- console.log('App listening on port 3000...');
-   });
 
 
 var yelp = new Yelp({
@@ -51,6 +49,29 @@ var yelp = new Yelp({
 });
 
   app.use(express.static(__dirname + '/public'));
+
+
+  app.get('/comment',function (req,res) {
+    res.sendfile("public/comments.html");
+  });
+
+app.get('/comments', function (req,res) {
+  var comments = Comment.find().exec(function(err, comments) {
+      if (err) return next(err);
+      res.send(comments);
+    });;
+})
+
+   app.post("/comments", function(req, res) {
+     var comment = new Comment(req.body);
+     comment.save(function(err) {
+       if (err) {
+         console.log(err);
+       } else {
+         res.send(comment)
+       }
+     });
+   });
 
 app.get('/all', function(req, res){
   yelp.search({ term: 'food', location: 'Manhattan' })
@@ -262,16 +283,10 @@ app.get('/washington_heights', function(req, res){
   });
 });
 
-
- mongoose.connect('mongodb://localhost/Nighthawkapp', function (err) {
-     if (err) {
-        console.log(err);
-     } else {
-       console.log('connection successful');
-     }
-  });
-
-
+//Set up the port to listen
+app.listen(3000, function () {
+console.log('App listening on port 3000...');
+});
 
 
 
