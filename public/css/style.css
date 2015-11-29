@@ -1,5 +1,5 @@
  body{
-    font-family: 'Warnes', cursive;
+    font-family: 'Arial';
 }
 .nav {
     width: 100%;
@@ -12,7 +12,8 @@
     background-image: url("http://i970.photobucket.com/albums/ae188/conradyak/Slice%201_zpsezwgjngl.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #A2D3C2;
+    /*logo on homepage*/
+    background-color: #7E1515;
 }
 
 .thumbnail {
@@ -31,15 +32,16 @@
 .menu-wrap {
     width:100%;
     box-shadow:0px 1px 3px rgba(0,0,0,0.2);
-    background:#A2D3C2;
+    background:#7E1515;
 }
 
 .menu {
   width:50%;
     height: 125px;
     margin:0px auto;
-    background-color: #A2D3C2;
-    color: #C73E1D;
+    /*bar on homepage right side*/
+    background-color: #7E1515;
+    color: white;
     margin-right: 0px;
     position: relative;
 }
@@ -52,7 +54,7 @@
 
 .menu a {
     transition:all linear 0.15s;
-    color:#C73E1D;
+    color:white;
 }
 
 .menu li:hover > a, .menu .current-item > a {
@@ -81,7 +83,7 @@
 }
 
 .menu > ul > li:hover > a, .menu > ul > .current-item > a {
-    background:#EDD6B2;
+    background:#4F0D0D;
 }
 
 /*----- Bottom Level -----*/
@@ -100,7 +102,8 @@
     opacity:0;
     transition:opacity linear 0.15s;
     box-shadow:0px 2px 3px rgba(0,0,0,0.2);
-    background:#EDD6B2;
+    /*dropdown menu color*/
+    background:#4F0D0D;
 }
 
 .sub-menu li {
@@ -114,7 +117,7 @@
 }
 
 .sub-menu li a:hover, .sub-menu .current-item a {
-    background:#847260;
+    background:#4F0D0D;
 }
 
 #user-name  {
@@ -126,7 +129,7 @@
   padding:20px 20px;
   position: fixed;
   height: 85%;
-  width: 35%;
+  width: 45%;
   margin-left: 200px;
   overflow-x: none;
   overflow-y: scroll;
@@ -141,18 +144,18 @@
 
 #bar {
   text-align: center;
-  border: 3px solid black;
+  border: 15px solid #4F0D0D;
   border-radius: 20px;
   overflow: scroll;
   height: 300px;
-  background-color: #EDD6B2;
+  background-color: #7E1515;
   margin: 10px;
-  color: #C73E1D;
-  font-family: 'Warnes', cursive;
+  color: #D3D3D3;
+  font-family: 'Arial', cursive;
 }
 
 #bar-name {
-  font-family: 'Warnes', cursive;
+  font-family: 'Arial', cursive;
 }
 
 .bar-comment-scroll {
@@ -162,41 +165,43 @@
   height: 300px;
   background-color: white;
   margin: 10px;
-  font-family: 'Warnes', cursive;
+  font-family: 'Arial', cursive;
 }
 
 .jumbotron {
   margin-top: 100px;
-  color: #C73E1D;
-  background-color: #EDD6B2;
-  font-family: 'Warnes', cursive;
+  /*writing inside the jumbotron homepage*/
+  color: #7E1515;
+  background-color: white;
+  font-family: 'Arial', cursive;
 }
 
 .jumbotron h1 {
-  font-family: 'Warnes', cursive;
+  font-family: 'Arial', cursive;
 }
 
 .jumbotron h3 {
-  font-family: 'Warnes', cursive;
+  font-family: 'Arial', cursive;
 }
 
 .jumbotron a.btn {
-  background-color:#A2D3C2;
+  button background-color
+  background-color:#7E1515;
 }
 
 .btn {
-  color: #C73E1D;
-  background-color: #EDD6B2;
+  color: #B61E1E;
+  background-color: white;
 }
 
 .container h1 {
-  font-family: 'Warnes', cursive;
+  font-family: 'Arial', cursive;
 }
 
 .container a {
-  color: #C73E1D;
+  color: #B61E1E;
 }
 
 .fa-sign-in {
-  color: #C73E1D;
+  color: #7E1515;
 }
