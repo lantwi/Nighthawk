@@ -2,27 +2,71 @@
 <html>
 
   <head>
+    <meta charset="utf-8">
+    <title>NightHawk</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-      <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
-<script type="text/javascript" src="js/comments.js"></script>
+    <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+    <script type="text/javascript" src="js/comments.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Warnes' rel='stylesheet' type='text/css'>
 
- <meta charset="utf-8">
-    <title>Comments</title>
   </head>
   <body>
 
-<div class="comment-container">
+    <div id="header">
+      <div class="head_container">
 
+        <div class="logo">
 
-</div>
-<input type="text" id='new-comment' name="name" value="" placeholder="Comment">
-<input type="text" id='name' name="name" value="" placeholder=" Name">
-<input type="text" name="name" id='bar' value="" placeholder="Bar">
-<button type="button" id='comment-submit' name="button">Submit</button>
+        </div>
 
-    <!-- <input type="text" id='comment' name="name" value="">
-    <button type="button" id='submit' name="button">Submit</Submit> -->
+        <div class="nighthawk"></div>
+        <nav class="menu">
+          <ul class="clearfix">
+            <li><a href="">Neighborhoods <span class="arrow">&#9660;</span></a>
+                  <ul class="sub-menu">
+                    <li id="les"><a href="">Lower East Side</a></li>
+                    <li id="soho"><a href="">SoHo</a></li>
+                    <li id="china-town"><a href="">China Town</a></li>
+                    <li id="greenwich"><a href="">Greenwich Village</a></li>
+                    <li id="east-village"><a href="">East Village</a></li>
+                    <li id="tribeca"><a href="">Tribeca</a></li>
+                    <li id="gramercy"><a href="">Gramercy Park</a></li>
+                    <li id="chelsea"><a href="">Chelsea</a></li>
+                    <li id="midtown-west"><a href="">Midtown West</a></li>
+                    <li id="midtown-east"><a href="">Midtown East</a></li>
+                    <li id="uws"><a href="">Upper West Side</a></li>
+                    <li id="ues"><a href="">Upper East Side</a></li>
+                    <li id="harlem"><a href="">Harlem</a></li>
+                    <li id="wash-heights"><a href="">Washington Heights</a></li>
+                  </ul>
+                </li>
+            <li><a href="/">Home</a></li>
+
+            <li><a href="/logout">Sign Out</a></li>
+
+            <p id="user-name"><%= user.local.email %></p>
+
+          </ul>
+
+        </nav>
+      </div>
+    </div>
+
+          <div class="comment-container"></div>
+            <div class="new-comment-nav">
+              <div class="comments-nav-contaier">
+                      <input type="text" id='new-comment' name="name" value="" placeholder="Comment">
+                      <input type="text" id='name' name="name" value="" placeholder=" Name">
+                      <input type="text" name="name" id='bar-comment' value="" placeholder="Bar">
+                      <button type="button" id='comment-submit' name="button">Submit</button>
+              </div>
+            </div>
+          <!-- <input type="text" id='comment' name="name" value="">
+          <button type="button" id='submit' name="button">Submit</Submit> -->
 
   </body>
 </html>

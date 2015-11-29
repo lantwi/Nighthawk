@@ -20,8 +20,6 @@
     height: 125px;
 }
 
-
-
 .clearfix:after {
     display:block;
     clear:both;
@@ -199,4 +197,29 @@
 
 .fa-sign-in {
   color: #C73E1D;
+}
+
+.new-comment-nav {
+  height: 50px;
+  background-color: #EDD6B2;
+}
+
+.comments-nav-contaier {
+  margin-left: 425px;
+  padding-top: 10px;
+}
+
+.comments-nav-contaier input {
+  border: solid 2px silver;
+  transition: box-shadow 0.3s, border 0.3s;
+  border-bottom: solid 2px #969696;
+  width: 200px;
+}
+
+#comment-submit {
+  background-color: #C73E1D;
+  color: whitesmoke;
+  width: 70px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
