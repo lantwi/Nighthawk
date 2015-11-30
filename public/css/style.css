@@ -74,7 +74,7 @@
 }
 
 .menu > ul > li > a {
-    padding:10px 40px;
+    padding:10px 20px;
     display:inline-block;
     text-shadow:0px 1px 0px rgba(0,0,0,0.4);
     margin-top: 25px;
@@ -128,7 +128,7 @@
   position: fixed;
   height: 85%;
   width: 45%;
-  margin-left: 200px;
+  margin-left: 500px;
   overflow-x: none;
   overflow-y: scroll;
   z-index: 1;
@@ -227,4 +227,11 @@
   width: 70px;
   border-bottom-right-radius: 10px;
   border-top-left-radius: 10px;
+}
+
+.comment-container p {
+  text-align: center;
+  border: solid 5px silver;
+  width: 40%;
+  margin-left: 500px;
 }
