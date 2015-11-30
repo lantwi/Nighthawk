@@ -150,7 +150,7 @@ app.get('/east_village', function(req, res){
   });
 });
 
-app.get('/tribeca ', function(req, res){
+app.get('/tribeca', function(req, res){
   yelp.search({ term: 'bars', location: 'Tribeca', limit: 10, sort: 2  })
     .then(function (data) {
     console.log(data);
@@ -287,29 +287,3 @@ app.get('/washington_heights', function(req, res){
 app.listen(3000, function () {
 console.log('App listening on port 3000...');
 });
-
-
-
-// // See http://www.yelp.com/developers/documentation/v2/search_api
-// yelp.search({ term: 'food', location: 'Montreal' })
-// .then(function (data) {
-//  console.log(data);
-// })
-// .catch(function (err) {
-//  console.error(err);
-// });
-//
-// // See http://www.yelp.com/developers/documentation/v2/business
-// yelp.business('yelp-san-francisco')
-//  .then(console.log)
-//  .catch(console.error);
-//
-// yelp.phoneSearch({ phone: '+15555555555' })
-//  .then(console.log)
-//  .catch(console.error);
-//
-// // A callback based API is also available:
-// yelp.business('yelp-san-francisco', function(err, data) {
-//  if (err) return console.log(error);
-//  console.log(data);
-// });

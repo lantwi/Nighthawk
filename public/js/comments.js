@@ -1,4 +1,3 @@
-// 'use strict';
 
   $(function(){
 
@@ -23,7 +22,7 @@ setInterval(function() {
 
 $('#comment-submit').click(function (event) {
   var text = $('#new-comment').val();
-  var bar = $('#bar').val();
+  var bar = $('#bar-comment').val();
   var name = $('#name').val();
   console.log(text)
   var date = new Date();
