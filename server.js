@@ -42,10 +42,10 @@ require('./app/routes.js')(app, passport);//load our routes and pass in our app 
 
 
 var yelp = new Yelp({
- consumer_key: '8cszeFT7_E4zMENoUzmkuQ',
- consumer_secret: 'zleZtp_5LRJl4O90yKsD4BAIhp4',
- token: 'nnX71q_vcXn3jU8X0O1lMWNFBosUf0TD',
- token_secret: 'BC31sF5RDHI54eORY7PBf0-wVS4',
+ consumer_key: ,
+ consumer_secret: ,
+ token: ,
+ token_secret: ,
 });
 
   app.use(express.static(__dirname + '/public'));
