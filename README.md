@@ -8,6 +8,7 @@
 
 ##Technology used
 - Yelp API
+- passport
 - body-parser
 - express
 - express-sessions
