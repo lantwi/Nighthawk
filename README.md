@@ -1,4 +1,4 @@
-# Group_project - Nighthawk
+#Nighthawk - Group Project
 
 ##Group members
 - Lesley Antwi
